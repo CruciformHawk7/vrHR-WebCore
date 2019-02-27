@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28606.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vrHR-WebCore", "vrHR-WebCore\vrHR-WebCore.csproj", "{475697C4-00AD-4BA7-AF68-352DD12A8A4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{475697C4-00AD-4BA7-AF68-352DD12A8A4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{475697C4-00AD-4BA7-AF68-352DD12A8A4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{475697C4-00AD-4BA7-AF68-352DD12A8A4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{475697C4-00AD-4BA7-AF68-352DD12A8A4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62BC8D5F-76F7-47AC-A8AF-6496787C5828}
+	EndGlobalSection
+EndGlobal
