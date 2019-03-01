@@ -4,60 +4,227 @@
     ViewData["Title"] = "Sign Up";
 }
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-        <!-- Bootstrap core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <!-- Material Design Bootstrap -->
-        <link href="css/mdb.min.css" rel="stylesheet">
-        <!-- Your custom styles (optional) -->
-        <link href="css/style.min.css" rel="stylesheet">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.min.css" rel="stylesheet">
 
-        <!-- Fluent Styles-->
+    <!-- Fluent Styles-->
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="~/FluentStyle/css/bootstrap.min.css">
-        <!-- Fluent Design Bootstrap -->
-        <link rel="stylesheet" href="~/FluentStyle/css/fluent.css">
-        <!-- Micon icons-->
-        <link rel="stylesheet" href="~/FluentStyle/css/micon.min.css">
-        <!--Custom style -->
-        <style>
-            body {
-                background-color: #fff;
-                color: #000;
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="~/FluentStyle/css/bootstrap.min.css">
+    <!-- Fluent Design Bootstrap -->
+    <link rel="stylesheet" href="~/FluentStyle/css/fluent.css">
+    <!-- Micon icons-->
+    <link rel="stylesheet" href="~/FluentStyle/css/micon.min.css">
+    <!--Custom style -->
+    <style>
+        body {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .font-weight-bold {
+            font-weight: 600 !important;
+        }
+
+        h5,
+        p {
+            font-weight: 400;
+        }
+    </style>
+
+    <script src="/cdn-cgi/apps/head/EwfbwZVvsBU_QFk3GiE5LA0DwuE.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .form-wrapper-outer {
+            padding: 40px;
+            border-radius: 8px;
+            margin: auto;
+            width: 460px;
+            border: 1px solid #DADCE0;
+            margin-top: 7%;
+        }
+
+            .form-wrapper-outer .form-logo {
+                margin: 0px auto 15px;
+                width: 100px;
             }
 
-            .font-weight-bold {
-                font-weight: 600 !important;
+                .form-wrapper-outer .form-logo img {
+                    width: 100%;
+                }
+
+        .form-greeting {
+            text-align: center;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .form-button {
+            text-align: right;
+        }
+
+        .field-wrapper {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+            .field-wrapper input {
+                border: 1px solid #DADCE0;
+                padding: 15px;
+                border-radius: 4px;
+                width: 100%;
             }
 
-            h5,
-            p {
-                font-weight: 400;
+                .field-wrapper input:focus {
+                    border: 1px solid #1A73E8;
+                }
+
+            .field-wrapper .field-placeholder {
+                font-size: 16px;
+                position: absolute;
+                /* background: #fff; */
+                bottom: 17px;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                color: #80868b;
+                left: 8px;
+                padding: 0 8px;
+                -webkit-transition: transform 150ms cubic-bezier(0.4,0,0.2,1),opacity 150ms cubic-bezier(0.4,0,0.2,1);
+                transition: transform 150ms cubic-bezier(0.4,0,0.2,1),opacity 150ms cubic-bezier(0.4,0,0.2,1);
+                z-index: 1;
+                text-align: left;
+                width: 100%;
             }
-        </style>
-    </head>
+
+                .field-wrapper .field-placeholder span {
+                    background: #ffffff;
+                    padding: 0px 8px;
+                }
+
+            .field-wrapper input:not([disabled]):focus ~ .field-placeholder {
+                color: #1A73E8;
+            }
+
+            .field-wrapper input:not([disabled]):focus ~ .field-placeholder,
+            .field-wrapper.hasValue input:not([disabled]) ~ .field-placeholder {
+                -webkit-transform: scale(.75) translateY(-39px) translateX(-60px);
+                transform: scale(.75) translateY(-39px) translateX(-60px);
+            }
+    </style>
+    <script>
+
+        $(function () {
+
+            $(".field-wrapper .field-placeholder").on("click", function () {
+                $(this).closest(".field-wrapper").find("input").focus();
+            });
+            $(".field-wrapper input").on("keyup", function () {
+                var value = $.trim($(this).val());
+                if (value) {
+                    $(this).closest(".field-wrapper").addClass("hasValue");
+                } else {
+                    $(this).closest(".field-wrapper").removeClass("hasValue");
+                }
+            });
+
+        });
+
+    </script>
+</head>
 
 <h1>Sign Up</h1>
-
-<table>
-    <tr>
-        <td>
-            UserName: 
-        </td>
-        <td>
-            
-        </td>
-    </tr>
-</table>
-
+<body>
+    <form method="POST">
+        <table>
+            <tr>
+                <td>
+                    <div class="field-wrapper">
+                        <label for="Email"></label>
+                        <input type="email" name="Email" asp-for="hr.Email">
+                        <div class="field-placeholder"><span>Email</span></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="field-wrapper">
+                        <label for="Password"></label>
+                        <input type="password" name="Password" asp-for="Password">
+                        <div class="field-placeholder"><span>Password</span></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="field-wrapper">
+                        <label for="ConfirmPassword"></label>
+                        <input type="password" name="ConfirmPassword" asp-for="ConfirmPassword">
+                        <div class="field-placeholder"><span>Confirm Password</span></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="field-wrapper">
+                        <label for="FirstName"></label>
+                        <input type="text" name="FirstName" asp-for="hr.FirstName">
+                        <div class="field-placeholder"><span>First Name</span></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="field-wrapper">
+                        <label for="MiddleName"></label>
+                        <input type="text" name="MiddleName" asp-for="hr.MiddleName">
+                        <div class="field-placeholder"><span>Middle Name</span></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="field-wrapper">
+                        <label for="LastName"></label>
+                        <input type="text" name="LastName" asp-for="hr.LastName">
+                        <div class="field-placeholder"><span>Last Name</span></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="field-wrapper">
+                        <label for="Address"></label>
+                        <input type="text" name="Address" asp-for="hr.Address">
+                        <div class="field-placeholder"><span>Address</span></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="field-wrapper">
+                        <label for="PhoneNumber"></label>
+                        <input type="tel" name="PhoneNumber" asp-for="hr.PhoneNumber">
+                        <div class="field-placeholder"><span>Phone Number</span></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="Submit" class="submit" />
+        <label asp-for="abc"/>
+    </form>
+</body>
 
 
