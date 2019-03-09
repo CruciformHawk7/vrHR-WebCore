@@ -1,7 +1,7 @@
 ﻿@page
-@model vrHR_WebCore.Pages.SignUpModel
+@model vrHR_WebCore.PaymentModel
 @{
-    ViewData["Title"] = "Sign Up";
+    ViewData["Title"] = "Payment";
 }
 
 <head>
@@ -149,94 +149,53 @@
     </script>
 </head>
 
-@{
-    if (ViewBag.ShowDialog != null && ViewBag.ShowDialog == true)
-    {
-        <script type="text/javascript">
-            $(function () {
-                $("#aModal").modal('show');
-            })
-        </script>
-    }
-}
 
-<h1>Sign Up</h1>
-<body>
-    <form method="POST">
-        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
-        <label asp-for="ErrorCustom"></label>
-        <table>
-            <tr>
-                <td>
-                    <div class="field-wrapper">
-                        <label for="Email"></label>
-                        <input type="email" name="Email" asp-for="hr.Email">
-                        <div class="field-placeholder"><span>Email</span></div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="field-wrapper">
-                        <label for="Password"></label>
-                        <input type="password" name="Password" asp-for="Password">
-                        <div class="field-placeholder"><span>Password</span></div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="field-wrapper">
-                        <label for="ConfirmPassword"></label>
-                        <input type="password" name="ConfirmPassword" asp-for="ConfirmPassword">
-                        <div class="field-placeholder"><span>Confirm Password</span></div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="field-wrapper">
-                        <label for="FirstName"></label>
-                        <input type="text" name="FirstName" asp-for="hr.FirstName">
-                        <div class="field-placeholder"><span>First Name</span></div>
-                    </div>
-                </td>
-                <td>
-                    <div class="field-wrapper">
-                        <label for="MiddleName"></label>
-                        <input type="text" name="MiddleName" asp-for="hr.MiddleName">
-                        <div class="field-placeholder"><span>Middle Name</span></div>
-                    </div>
-                </td>
-                <td>
-                    <div class="field-wrapper">
-                        <label for="LastName"></label>
-                        <input type="text" name="LastName" asp-for="hr.LastName">
-                        <div class="field-placeholder"><span>Last Name</span></div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="field-wrapper">
-                        <label for="Address"></label>
-                        <input type="text" name="Address" asp-for="hr.Address">
-                        <div class="field-placeholder"><span>Address</span></div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="field-wrapper">
-                        <label for="PhoneNumber"></label>
-                        <input type="tel" name="PhoneNumber" asp-for="hr.PhoneNumber">
-                        <div class="field-placeholder"><span>Phone Number</span></div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <input type="submit" value="Submit" class="submit" />
-    </form>
-</body>
+
+@*<h1>Pay @pay.Amount</h1>*@
+
+<form method="POST">
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+    <label asp-for="ErrorMessage" class="text-danger"></label>
+    <table>
+        <tr>
+            <td>
+                <div class="field-wrapper">
+                    <label for="CardNumber"></label>
+                    <input type="text" name="CardNumber" asp-for="pay.CardNumber">
+                    <div class="field-placeholder"><span>Card Number</span></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="field-wrapper">
+                    <label for="CardType"></label>
+                    <input type="text" name="CardType" asp-for="pay.CardType">
+                    <div class="field-placeholder"><span>Card Type</span></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="field-wrapper">
+                    <label for="CVV"></label>
+                    <input type="text" name="CVV" asp-for="pay.CVV">
+                    <div class="field-placeholder"><span>CVV</span></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="field-wrapper">
+                    <label for="Expiry"></label>
+                    <input type="text" name="Expiry" asp-for="pay.Amount">
+                    <div class="field-placeholder"><span>Expiry</span></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</form>
+
 
 
