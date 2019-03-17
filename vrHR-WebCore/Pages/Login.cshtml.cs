@@ -41,7 +41,7 @@ namespace vrHR_WebCore.Pages
                 }
                 else
                 {
-                    Response.Redirect("/");
+                    Response.Redirect("/_LoginRedir");
                 }
             }
             return Page();

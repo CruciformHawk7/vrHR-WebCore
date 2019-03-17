@@ -31,12 +31,12 @@ namespace vrHR_WebCore.Classes
 
         public List<Message> messages;
 
-        public void addMessage(Message message)
+        public void AddMessage(Message message)
         {
             messages.Add(message);
         }
 
-        public double computeAttendance()
+        public double ComputeAttendance()
         {
             return DaysAttended / TotalDays * 100;
         }
