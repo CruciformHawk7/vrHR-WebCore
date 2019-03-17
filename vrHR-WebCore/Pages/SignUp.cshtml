@@ -178,6 +178,15 @@
             <tr>
                 <td>
                     <div class="field-wrapper">
+                        <label for="username"></label>
+                        <input type="text" name="username" asp-for="hr.UserName">
+                        <div class="field-placeholder"><span>Username</span></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="field-wrapper">
                         <label for="Password"></label>
                         <input type="password" name="Password" asp-for="Password">
                         <div class="field-placeholder"><span>Password</span></div>
@@ -235,7 +244,7 @@
                 </td>
             </tr>
         </table>
-        <input type="submit" value="Submit" class="submit" />
+        <input type="submit" value="Submit" class="btn btn-primary" />
     </form>
 </body>
 

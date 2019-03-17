@@ -14,6 +14,7 @@ namespace vrHR_WebCore.Classes
         public static string SessionCode { get; set; }
         public static double Amount { get; set; }
         public static bool Paying { get; set; }
+        public static bool IsHR { get; set; }
 
     }
 }
