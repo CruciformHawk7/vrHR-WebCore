@@ -189,12 +189,21 @@
             <td>
                 <div class="field-wrapper">
                     <label for="Expiry"></label>
-                    <input type="text" name="Expiry" asp-for="pay.Amount">
+                    <input type="text" name="Expiry" asp-for="pay.Expiry">
                     <div class="field-placeholder"><span>Expiry</span></div>
                 </div>
             </td>
         </tr>
+        <tr>
+            <td>
+                <h4>Pay: </h4>
+                <div class="field-wrapper">
+                    <label name="Amount">Rs. @Classes.Session.Amount</label>
+                </div>
+            </td>
+        </tr>
     </table>
+    <input type="submit" value="Pay" class="btn btn-primary"/>
 </form>
 
 

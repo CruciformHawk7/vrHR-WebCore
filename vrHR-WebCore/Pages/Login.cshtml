@@ -157,8 +157,8 @@
             <td>
                 <div class="field-wrapper">
                     <label for="Email"></label>
-                    <input type="email" name="Email" asp-for="Login.UserName">
-                    <div class="field-placeholder"><span>Username/E-mail</span></div>
+                    <input type="text" name="Email" asp-for="Login.UserName">
+                    <div class="field-placeholder"><span>Username</span></div>
                 </div>
             </td>
             <td>
@@ -170,7 +170,8 @@
             </td>
         </tr>
     </table>
-    <button type="button" class="btn btn-link">Login</button>
+    <label asp-for="Login.Message" class="text-danger"></label>
+    <input type="submit" value="Login" class="btn btn-primary" />
     <br />
     <a href="/SignUp">Or Sign up</a>
 </form>

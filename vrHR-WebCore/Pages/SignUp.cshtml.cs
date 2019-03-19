@@ -27,7 +27,10 @@ namespace vrHR_WebCore.Pages
         {
             SqlCommand cmm = new SqlCommand("Select count(*) from HR where Username=@Username", sql);
             cmm.Parameters.AddWithValue("@Username", hr.UserName);
-            int c = Convert.ToInt32(cmm.ExecuteScalarAsync());
+            sql.Open();
+            var x9 = await cmm.ExecuteScalarAsync();
+            int c = Convert.ToInt32(x9);
+            sql.Close();
             if (c!=0)
             {
                 ErrorCustom = "Username already exists!";
@@ -42,9 +45,12 @@ namespace vrHR_WebCore.Pages
                 cmd.Parameters.AddWithValue("@LastName", hr.LastName);
                 cmd.Parameters.AddWithValue("@Address", hr.Address);
                 cmd.Parameters.AddWithValue("@Phone", hr.PhoneNumber);
+                sql.Open();
                 int x = await cmd.ExecuteNonQueryAsync();
+                sql.Close();
                 if (x == 1)
                 {
+                    Classes.Session.Paying = true;
                     Classes.Session.Amount = 800;
                     return RedirectToPage("/Payment");
                 }

@@ -14,6 +14,7 @@ namespace vrHR_WebCore.Pages
         [BindProperty]
         public Classes.LoginModel Login { get; set; }
         SqlConnection sql = new SqlConnection(Session.connection);
+       
         public async Task<IActionResult> OnPostAsync()
         {
             SqlCommand cmd = new SqlCommand("Select Count(*) from HR where Username=@username and Passsword=@Password");
@@ -21,6 +22,7 @@ namespace vrHR_WebCore.Pages
             cmd.Parameters.AddWithValue("@Password", enc(Login.Password));
             sql.Open();
             var x = await cmd.ExecuteScalarAsync();
+            sql.Close();
             int p = Convert.ToInt32(x);
             int t = 2;
             string conn = "";
@@ -32,6 +34,7 @@ namespace vrHR_WebCore.Pages
                     {
                         conn = GenerateID(14);
                         cmd = new SqlCommand("Select count(*) from connections where ConnID=@conn");
+                        cmd.Parameters.AddWithValue("@conn", Classes.Session.SessionCode); 
                         var s = await cmd.ExecuteScalarAsync();
                         t = Convert.ToInt32(s);
                     }
@@ -43,6 +46,7 @@ namespace vrHR_WebCore.Pages
                 {
                     Response.Redirect("/_LoginRedir");
                 }
+                Login.Message = "Login Failed, Invalid Username or password.";
             }
             return Page();
         }
